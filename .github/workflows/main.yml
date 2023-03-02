@@ -32,7 +32,7 @@ jobs:
       env:
         GIT_NAME: Cerror
         GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
-        REPO: github.com/cerror.github.io
+        REPO: Cerrorr/cerror.github.io
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         cd ./public && git init && git add .
