@@ -1,20 +1,42 @@
-name: github pages
+name: Deployment
+
 on:
   push:
-    branches:
-      - main # default branch
+    branches: [main] # only push events on source branch trigger deployment
+
 jobs:
-  deploy:
-    runs-on: ubuntu-18.04
+  hexo-deployment:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
+
     steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true # Checkout private submodules(themes or something else).
-      - uses: c-hive/gha-yarn-cache@v2
-      - run: yarn install
-      - run: yarn build
-      - name: Deploy
-        uses: peaceiris/pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+    - name: Checkout source
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+
+    - name: Install dependencies & Generate static files
+      run: |
+        node -v
+        npm i -g hexo-cli
+        npm i
+        hexo clean
+        hexo g
+    - name: Deploy to Github Pages
+      env:
+        GIT_NAME: Cerror
+        GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
+        REPO: github.com/cerror.github.io
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        cd ./public && git init && git add .
+        git config --global user.name $GIT_NAME
+        git config --global user.email $GIT_EMAIL
+        git commit -m "Site deployed by GitHub Actions"
+        git push --force --quiet "https://$GH_TOKEN@$REPO" main:pages
