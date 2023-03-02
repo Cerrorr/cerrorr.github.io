@@ -54,5 +54,5 @@ jobs:
         git init
         git add -A
         git commit -m "Create by workflows"
-        git remote add origin https://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@github.com/Cerrorr/cerror.github.io
-        git push origin pages -f
+        git push -f https://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@github.com/Cerrorr/cerror.github.io main:pages
+
