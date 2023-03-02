@@ -10,8 +10,8 @@ menu:
   # List||fas fa-list:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
-  友链: /link/ || fas fa-link
-  关于: /about/ || fas fa-heart
+  # 友链: /link/ || fas fa-link
+  # 关于: /about/ || fas fa-heart
 
 nav:
   logo: https://cdn.jsdelivr.net/gh/Cerrorr/Images@main/202303012143769.jpeg # image
