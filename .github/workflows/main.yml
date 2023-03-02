@@ -3,7 +3,7 @@ name: Deploy # 部署
 on: # 触发条件
   push:
     branches:
-      - pages # 推送到 main 分支
+      - mian # 推送到 main 分支
  
   release:
     types:
