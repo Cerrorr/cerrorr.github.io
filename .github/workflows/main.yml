@@ -55,4 +55,4 @@ jobs:
         git add -A
         git commit -m "Create by workflows"
         git remote add origin https://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@github.com/Cerrorr/cerror.github.io
-        git push origin pages -f
+        git push --set-upstream origin pages -f
