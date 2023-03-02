@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Cerror的博客</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2023-03-02T07:18:07.082Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Cerror</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ggt</title>
+    <link href="http://example.com/2023/03/02/hello-world/"/>
+    <id>http://example.com/2023/03/02/hello-world/</id>
+    <published>2023-03-02T07:18:07.082Z</published>
+    <updated>2023-03-02T07:18:07.082Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome &lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
