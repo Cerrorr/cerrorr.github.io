@@ -3,7 +3,7 @@ name: Deploy # 部署
 on: # 触发条件
   push:
     branches:
-      - main # 推送到 main 分支
+      - pages # 推送到 main 分支
  
   release:
     types:
@@ -54,5 +54,5 @@ jobs:
         git init
         git add -A
         git commit -m "Create by workflows"
-        git remote add origin https://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@github.com/Cerrorr/cerrorr.github.io
-        git push origin master -f
+        git remote add origin https://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@github.com/Cerrorr/cerror.github.io
+        git push origin pages -f
