@@ -1,58 +1,21 @@
-name: Deploy # 部署
- 
-on: # 触发条件
+name: github pages
+on:
   push:
     branches:
-      - main # 推送到 main 分支
- 
-  release:
-    types:
-      - published # 推送新版本号
- 
-  workflow_dispatch: # 手动触发
- 
+      - main # default branch
 jobs:
-  build:
-    runs-on: ubuntu-latest
- 
+  deploy:
+    runs-on: ubuntu-18.04
     steps:
-    - name: Checkout # Checkout 仓库
-      uses: actions/checkout@v2
-      with:
-        ref: main
- 
-    - name: Setup Node # 安装 Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: "14.x"
- 
-    - name: Install Hexo # 安装 Hexo
-      run: |
-        npm install hexo-cli -g
-        
-    - name: Cache Modules # 缓存 Node 插件
-      uses: actions/cache@v1
-      id: cache-modules
-      with:
-        path: node_modules
-        key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
- 
-    - name: Install Dependencies # 如果没有缓存或 插件有更新，则安装插件
-      if: steps.cache-modules.outputs.cache-hit != 'true'
-      run: | # 如果仓库里没有 package-lock.json，上传一下，npm ci 必须要有 package-lock.json
-        npm i
-    - name: Generate # 生成
-      run: |
-        hexo clean
-        hexo generate
-    - name: Deploy # 部署
-      run: |
-        git config --global user.name "Cerror"
-        git config --global user.email "1069045105.com"
-        export TZ='Asia/Shanghai'
-        cd public/
-        git init
-        git add -A
-        git commit -m "Create by workflows"
-        git remote add origin https://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@github.com/Cerrorr/cerrorr.github.io
-        git push origin master -f
+      - uses: actions/checkout@v2
+        with:
+          submodules: true # Checkout private submodules(themes or something else).
+      - uses: c-hive/gha-yarn-cache@v2
+      - run: yarn install
+      - run: yarn build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: pages
