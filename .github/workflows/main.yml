@@ -1,58 +1,32 @@
-name: Deploy # 部署
- 
-on: # 触发条件
+name: Build and Deploy Hexo
+on:
   push:
     branches:
-      - main # 推送到 main 分支
- 
-  release:
-    types:
-      - published # 推送新版本号
- 
-  workflow_dispatch: # 手动触发
- 
+      - main
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
- 
     steps:
-    - name: Checkout # Checkout 仓库
-      uses: actions/checkout@v2
+    - name: Checkout 🛎️
+      uses: actions/checkout@main
+      
+    - name: Use Node.js 14
+      uses: actions/setup-node@v2-beta
       with:
-        ref: main
- 
-    - name: Setup Node # 安装 Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: "14.x"
- 
-    - name: Install Hexo # 安装 Hexo
-      run: |
-        npm install hexo-cli -g
+        node-version: '14'
+
         
-    - name: Cache Modules # 缓存 Node 插件
-      uses: actions/cache@v1
-      id: cache-modules
-      with:
-        path: node_modules
-        key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
- 
-    - name: Install Dependencies # 如果没有缓存或 插件有更新，则安装插件
-      if: steps.cache-modules.outputs.cache-hit != 'true'
-      run: | # 如果仓库里没有 package-lock.json，上传一下，npm ci 必须要有 package-lock.json
-        npm i
-    - name: Generate # 生成
+    - name: Install and Build 🔧 
       run: |
+        npm install -g hexo-cli
+        npm install
         hexo clean
         hexo generate
-    - name: Deploy # 部署
-      run: |
-        git config --global user.name "Cerror"
-        git config --global user.email "1069045105.com"
-        export TZ='Asia/Shanghai'
-        cd public/
-        git init
-        git add -A
-        git commit -m "Create by workflows"
-        git remote add origin https://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@github.com/Cerrorr/cerror.github.io
-        git push --set-upstream origin pages -f
+
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: pages
+        FOLDER: public
+        BASE_BRANCH: main
