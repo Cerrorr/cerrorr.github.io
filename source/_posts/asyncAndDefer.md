@@ -1,7 +1,7 @@
 ---
 title: 图解script标签中的async和defer
 date:
-cover: https://cdn.jsdelivr.net/gh/Cerrorr/Images@main/202303012143769.jpeg 
+cover: https://cdn.jsdelivr.net/gh/Cerrorr/cerrorr.github.io@images/202303051540620.jpeg 
 categories:
   - 重读JavaScript高级程序设计
 tags:

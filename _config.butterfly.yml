@@ -14,7 +14,7 @@ menu:
   # 关于: /about/ || fas fa-heart
 
 nav:
-  logo: https://cdn.jsdelivr.net/gh/Cerrorr/Images@main/202303012143769.jpeg # image
+  logo: https://cdn.jsdelivr.net/gh/Cerrorr/cerrorr.github.io@images/202303051540620.jpeg # image
   display_title: true
   fixed: false # fixed navigation bar
 
@@ -90,11 +90,11 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: https://cdn.jsdelivr.net/gh/Cerrorr/Images@main/202303012143769.jpeg # image
+favicon: https://cdn.jsdelivr.net/gh/Cerrorr/cerrorr.github.io@images/202303051540620.jpeg # image
 
 # Avatar (頭像)
 avatar:
-  img: https://cdn.jsdelivr.net/gh/Cerrorr/Images@main/202303012143769.jpeg # image
+  img: https://cdn.jsdelivr.net/gh/Cerrorr/cerrorr.github.io@images/202303051540620.jpeg # image
   effect: false
 
 # Disable all banner image
