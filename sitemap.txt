@@ -1,5 +1,4 @@
 http://example.com/2023/03/05/asyncAndDefer/
-http://example.com/2023/03/05/page/
 http://example.com/categories/index.html
 http://example.com/link/index.html
 http://example.com/tags/index.html
