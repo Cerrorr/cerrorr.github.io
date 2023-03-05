@@ -205,7 +205,6 @@ post_copyright:
   enable: true
   decode: false
   author_href: https://cerrorr.github.io
-  copyright_url: https://cerrorr.github.io
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
@@ -226,7 +225,7 @@ post_edit:
   enable: false
   # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
   # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
-  url: https://github.com/itcodes/itcodes.github.io/edit/main/source/
+  url: https://github.com/Cerrorr/cerrorr.github.io/edit/main/source/
 
 # Related Articles
 related_post:
