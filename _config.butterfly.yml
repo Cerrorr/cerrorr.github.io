@@ -205,6 +205,7 @@ post_copyright:
   enable: true
   decode: false
   author_href: https://cerrorr.github.io
+  copyright_url: https://cerrorr.github.io
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
@@ -683,7 +684,7 @@ aside:
       link: https://github.com/Cerrorr
   card_announcement:
     enable: true
-    content: ggt进来了吗
+    content: 活在当下
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all

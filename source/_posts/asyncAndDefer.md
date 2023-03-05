@@ -18,6 +18,7 @@ tags:
 *  `<script src='xxx' defer></script>`
 
 那么这三类 script 有什么区别呢？
+
 ## script
 浏览器在解析 HTML 的时候，如果遇到一个没有任何属性的 script 标签，就会暂停解析，先发送网络请求获取该 JS 脚本的代码内容，然后让 JS 引擎执行该代码，当代码执行完毕后恢复解析。整个过程如下图所示：<br />![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/caf2f618530046658ab8e3b4a8699589~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp)<br />可以看到，script 阻塞了浏览器对 HTML 的解析，如果获取 JS 脚本的网络请求迟迟得不到响应，或者 JS 脚本执行时间过长，都会导致白屏，用户看不到页面内容。
 
@@ -29,6 +30,6 @@ defer 表示延迟，例如掘金的源码中就有大量的 defer 出现：<br 
 
 | script 标签 | JS 执行顺序 | 是否阻塞解析 HTML |
 | --- | --- | --- |
-| 阻塞 | 在 HTML 中的顺序 | 阻塞 |
-| 阻塞 | 网络请求返回顺序 | 可能阻塞，也可能不阻塞 |
-| 阻塞 | 在 HTML 中的顺序 | 不阻塞 |
+| `<script>` | 在 HTML 中的顺序 | 阻塞 |
+| `<script async>` | 网络请求返回顺序 | 可能阻塞，也可能不阻塞 |
+| `<script defer>` | 在 HTML 中的顺序 | 不阻塞 |
