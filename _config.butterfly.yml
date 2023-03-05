@@ -365,13 +365,16 @@ twikoo:
 # Giscus
 # https://giscus.app/
 giscus:
-  repo:
-  repo_id:
-  category_id:
+  repo: Cerrorr/cerrorr.github.io
+  repo_id: R_kgDOJEPpig
+  category_id: DIC_kwDOJEPpis4CUp56
   theme:
     light: light
     dark: dark
   option:
+    data-mapping: og:title
+    data-lang: zh-CN
+    data-input-position: top
 
 # Remark42
 # https://remark42.com/docs/configuration/frontend/

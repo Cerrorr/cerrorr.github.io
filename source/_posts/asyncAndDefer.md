@@ -7,9 +7,9 @@ categories:
 tags:
   - JavaScript
 ---
-> - 作者：[乔珂力](https://juejin.cn/user/1961184474432830)
-> - 链接：[图解script标签中的async和defer](https://juejin.cn/post/6894629999215640583)
-> - 来源：[稀土掘金](https://juejin.cn)
+> - 原文作者：[乔珂力](https://juejin.cn/user/1961184474432830)
+> - 原文链接：[图解script标签中的async和defer](https://juejin.cn/post/6894629999215640583)
+> - 原文来源：[稀土掘金](https://juejin.cn)
 
 在 HTML 中会遇到以下三类 script：
 
