@@ -28,3 +28,8 @@ async 表示异步，例如七牛的源码中就有大量的 async 出现：<br 
 ## defer script
 defer 表示延迟，例如掘金的源码中就有大量的 defer 出现：<br />![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6355d82fadb3496fa9ca78499f598e0e~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp)<br />当浏览器遇到带有 defer 属性的 script 时，获取该脚本的网络请求也是异步的，不会阻塞浏览器解析 HTML，一旦网络请求回来之后，如果此时 HTML 还没有解析完，浏览器不会暂停解析并执行 JS 代码，而是等待 HTML 解析完毕再执行 JS 代码，图示如下：<br />![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b8313e4787f04c79838fec9961bda0fb~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp)<br />如果存在多个 defer script 标签，浏览器（IE9及以下除外）会保证它们按照在 HTML 中出现的顺序执行，不会破坏 JS 脚本之间的依赖关系。<br />最后，根据上面的分析，不同类型 script 的执行顺序及其是否阻塞解析 HTML 总结如下：
 
+| script 标签 | JS 执行顺序 | 是否阻塞解析 HTML |
+| --- | --- | --- |
+| <script> | 在 HTML 中的顺序 | 阻塞 |
+| <script async> | 网络请求返回顺序 | 可能阻塞，也可能不阻塞 |
+| <script defer> | 在 HTML 中的顺序 | 不阻塞 |
