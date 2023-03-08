@@ -1,5 +1,5 @@
 ---
-title: this绑定分析
+title: this全面解析
 date: 2023-03-08 22:16:01
 cover: https://cdn.jsdelivr.net/gh/Cerrorr/cerrorr.github.io@images/202303082221876.png
 categories: 重读你不知道的JavaScript
