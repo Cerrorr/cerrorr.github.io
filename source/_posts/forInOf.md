@@ -1,5 +1,5 @@
 ---
-title: forInOf
+title: for...of和for...in的区别
 date: 2023-03-09 23:02:01
 cover: https://cdn.jsdelivr.net/gh/Cerrorr/cerrorr.github.io@images/202303092307629.png
 categories: 重读你不知道的JavaScript
