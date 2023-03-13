@@ -1,5 +1,6 @@
-https://cerrorr.github.io/2023/03/09/asyncAndDefer/
+https://cerrorr.github.io/2023/03/13/asyncAndDefer/
 https://cerrorr.github.io/2023/03/09/forInOf/
+https://cerrorr.github.io/2023/03/13/prototype/
 https://cerrorr.github.io/2023/03/08/thisAnalysis/
 https://cerrorr.github.io/categories/index.html
 https://cerrorr.github.io/link/index.html
